@@ -124,10 +124,10 @@ export default class PhpClassFromJsonMethodPresenter {
     }
 
     private getPropertyFromData(typePresenter: PhpPropertyTypePresenter): string[] {
-        const dataItemPre = `${typePresenter.getProperty().getName()} :`
+        const dataItemPre = `${typePresenter.getProperty().getName()}: `
         const dataItem = this.settings.jsonIsArray
-            ? `${dataItemPre}${this.paramVar}['${typePresenter.getProperty().getName()}']`
-            : `${dataItemPre}${this.paramVar}->${typePresenter.getProperty().getName()}`
+            ? `['${typePresenter.getProperty().getName()}']`
+            : `->${typePresenter.getProperty().getName()}`
 
         const property = typePresenter.getProperty();
 
@@ -138,6 +138,7 @@ export default class PhpClassFromJsonMethodPresenter {
 
         if (classArrayType) {
             const lines: string[] = [];
+            lines.push(`${dataItemPre}`)
 
             lines.push(
                 `${property.isNullable() ? `${dataItemNullCheck} ? ` : ''}array_map(static function($data) {`
