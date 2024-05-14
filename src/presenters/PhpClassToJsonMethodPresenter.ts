@@ -97,7 +97,7 @@ export default class PhpClassToJsonMethodPresenter {
 
             if (classArrayType.isPhpClassArray() && phpClassType) {
                 lines.push(
-                    `'${this.paramVar}' => array_map(static function(${property.getTypes().map(p => p.getFieldContent()).join('|') + (property.isNullable() ? '|null' : '')} $field) {`
+                    `'${typePresenter.getProperty().getName()}' => array_map(static function(${property.getTypes().map(p => p.getFieldContent()).join('|') + (property.isNullable() ? '|null' : '')} $field) {`
                 );
     
                 let line ='return ';
@@ -105,7 +105,7 @@ export default class PhpClassToJsonMethodPresenter {
                 lines.push(line);
             } else {
                 lines.push(
-                    `'${this.paramVar}' => array_map(static function($field) {`
+                    `'${typePresenter.getProperty().getName()}' => array_map(static function($field) {`
                 );
     
                 let line ='return ';
@@ -116,6 +116,6 @@ export default class PhpClassToJsonMethodPresenter {
             return lines;
         }
 
-        return [`'${this.paramVar}' => $this->${typePresenter.getProperty().getName()}`];
+        return [`'${typePresenter.getProperty().getName()}' => $this->${typePresenter.getProperty().getName()}`];
     }
 }
