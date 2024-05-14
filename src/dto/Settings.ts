@@ -30,6 +30,7 @@ export default interface Settings {
     allPropertiesNullable: boolean;
 
     addFromJsonMethod: boolean;
+    addToJsonMethod: boolean;
     jsonIsArray: boolean;
 
     docblock: PhpDocblock;
@@ -104,6 +105,7 @@ export const createDefaultSettings = (): Settings => {
         allPropertiesNullable: false,
 
         addFromJsonMethod: false,
+        addToJsonMethod: false,
         jsonIsArray: true,
 
         docblock: PhpDocblock.Necessary,

@@ -68,6 +68,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -105,6 +106,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -142,6 +144,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -179,6 +182,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -216,6 +220,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -253,6 +258,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -290,6 +296,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -327,6 +334,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -364,6 +372,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: true,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -401,6 +410,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: true,
+                addToJsonMethod: false,
                 jsonIsArray: true,
 
                 docblock: PhpDocblock.Necessary,
@@ -438,6 +448,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: true,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -475,6 +486,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: true,
+                addToJsonMethod: false,
                 jsonIsArray: true,
 
                 docblock: PhpDocblock.Necessary,
@@ -512,6 +524,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: true,
+                addToJsonMethod: false,
                 jsonIsArray: true,
 
                 docblock: PhpDocblock.All,
@@ -550,6 +563,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: true,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,
@@ -588,6 +602,7 @@ const settingCases = versions.map((version) => {
                 allPropertiesNullable: false,
 
                 addFromJsonMethod: false,
+                addToJsonMethod: false,
                 jsonIsArray: false,
 
                 docblock: PhpDocblock.Necessary,

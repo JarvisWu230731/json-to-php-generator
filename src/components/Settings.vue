@@ -126,7 +126,12 @@
           <FormGroup>
             <Checkbox
               v-model="model.addFromJsonMethod"
-              label="Add from json method"
+              label="Add from array method"
+            />
+
+            <Checkbox
+              v-model="model.addToJsonMethod"
+              label="Add to array method"
             />
 
             <Checkbox
