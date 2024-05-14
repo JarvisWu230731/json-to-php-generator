@@ -117,6 +117,12 @@ export default class PhpClassToJsonMethodPresenter {
             return lines;
         }
 
+        const phpClass = property.getTypes().find(t => t instanceof PhpClassType) as PhpClassType | undefined;
+
+        if (phpClass) {
+            return [`'${typePresenter.getProperty().getName()}' => $this->${typePresenter.getPhpVarName()}->toArray()`];
+        }
+
         return [`'${typePresenter.getProperty().getName()}' => $this->${typePresenter.getPhpVarName()}`];
     }
 }
