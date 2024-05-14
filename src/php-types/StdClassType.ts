@@ -12,4 +12,8 @@ export default class StdClassType extends PhpType {
     public isDocblockRequired(): boolean {
         return false;
     }
+
+    public getFieldContent(): string {
+        return '\\stdClass';
+    }
 }

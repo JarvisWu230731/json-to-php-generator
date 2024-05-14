@@ -23,6 +23,18 @@ export default class ArrayType extends PhpType {
         return '('+ this.types.map(type => type.getDocblockContent()).join('|') + ')' + '[]';
     }
 
+    public getFieldContent(): string {
+        if (this.types.length === 0 || !this.isTyped()) {
+            return 'array';
+        }
+        
+        if (this.types.length === 1) {
+            return this.types[0].getDocblockContent();
+        }
+
+        return '('+ this.types.map(type => type.getDocblockContent()).join('|') + ')';
+    }
+
     public isDocblockRequired(): boolean {
         return this.isTyped();
     }

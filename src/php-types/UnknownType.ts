@@ -13,4 +13,8 @@ export default class UnknownType extends PhpType {
     public isDocblockRequired(): boolean {
         return !(this.settings !== null && supportsMixedType(this.settings));
     }
+
+    public getFieldContent(): string {
+        return 'mixed';
+    }
 }

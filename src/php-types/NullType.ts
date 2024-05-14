@@ -12,4 +12,8 @@ export default class NullType extends PhpType {
     public isDocblockRequired(): boolean {
         return false;
     }
+
+    public getFieldContent(): string {
+        return 'null';
+    }
 }

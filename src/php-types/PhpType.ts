@@ -7,6 +7,8 @@ export default abstract class PhpType {
 
     abstract getDocblockContent(): string;
 
+    abstract getFieldContent(): string;
+
     abstract isDocblockRequired(): boolean;
 
     public setSettings(settings: Settings | null): void {

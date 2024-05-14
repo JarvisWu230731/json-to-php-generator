@@ -27,4 +27,8 @@ export default class PhpClassType extends PhpType {
             ? (new PhpClassPresenter(this.phpClass, this.settings)).getClassName()
             : this.phpClass.getName();
     }
+
+    public getFieldContent(): string {
+        return this.getClassName();
+    }
 }

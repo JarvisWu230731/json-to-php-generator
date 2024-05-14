@@ -97,7 +97,7 @@ export default class PhpClassToJsonMethodPresenter {
 
             if (classArrayType.isPhpClassArray() && phpClassType) {
                 lines.push(
-                    `'${this.paramVar}' => array_map(static function(${property.getTypes().map(p => p.getDocblockContent()).join('|') + (property.isNullable() ? '|null' : '')}$field) {`
+                    `'${this.paramVar}' => array_map(static function(${property.getTypes().map(p => p.getFieldContent()).join('|') + (property.isNullable() ? '|null' : '')} $field) {`
                 );
     
                 let line ='return ';
