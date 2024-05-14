@@ -112,7 +112,7 @@ export default class PhpClassToJsonMethodPresenter {
                 line += '$field;';
                 lines.push(line);
             }
-            lines.push(`}, $this->${typePresenter.getProperty().getName()}`);
+            lines.push(`}, $this->${typePresenter.getProperty().getName()})`);
             return lines;
         }
 
