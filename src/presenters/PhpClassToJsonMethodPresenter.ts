@@ -59,7 +59,8 @@ export default class PhpClassToJsonMethodPresenter {
         }
 
         codeWriter.outdent();
-        codeWriter.writeLine(');');
+        codeWriter.writeLine('];');
+        
     }
 
     private static writeLines(codeWriter: CodeWriter, lines: string[]): void {
@@ -116,6 +117,6 @@ export default class PhpClassToJsonMethodPresenter {
             return lines;
         }
 
-        return [`'${typePresenter.getProperty().getName()}' => $this->${typePresenter.getProperty().getName()}`];
+        return [`'${typePresenter.getProperty().getName()}' => $this->${typePresenter.getPhpVarName()}`];
     }
 }
