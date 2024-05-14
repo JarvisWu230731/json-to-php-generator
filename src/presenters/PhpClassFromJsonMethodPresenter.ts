@@ -148,7 +148,7 @@ export default class PhpClassFromJsonMethodPresenter {
             const phpClassType = classArrayType.getPhpClass();
 
             if (classArrayType.isPhpClassArray() && phpClassType) {
-                line += phpClassType.getType() + '::fromJson($data);'
+                line += phpClassType.getType() + '::fromArray($data);'
             } else {
                 line += '$data;';
             }
@@ -162,7 +162,7 @@ export default class PhpClassFromJsonMethodPresenter {
         const phpClass = property.getTypes().find(t => t instanceof PhpClassType) as PhpClassType | undefined;
 
         if (phpClass) {
-            const classFromJsonCode = `${phpClass.getType()}::fromJson(${dataItem})`;
+            const classFromJsonCode = `${phpClass.getType()}::fromArray(${dataItem})`;
 
             if (property.isNullable()) {
                 return [dataItemPre + `${dataItemNullCheck} ? ${classFromJsonCode} : null`];
