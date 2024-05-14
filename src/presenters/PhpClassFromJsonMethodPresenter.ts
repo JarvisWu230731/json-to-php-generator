@@ -165,10 +165,10 @@ export default class PhpClassFromJsonMethodPresenter {
             const classFromJsonCode = `${phpClass.getType()}::fromJson(${dataItem})`;
 
             if (property.isNullable()) {
-                return [`${dataItemNullCheck} ? ${classFromJsonCode} : null`];
+                return [dataItemPre + `${dataItemNullCheck} ? ${classFromJsonCode} : null`];
             }
 
-            return [classFromJsonCode];
+            return [dataItemPre + classFromJsonCode];
         }
 
         return [dataItemPre + dataItem + (property.isNullable() ? ' ?? null': '')];
