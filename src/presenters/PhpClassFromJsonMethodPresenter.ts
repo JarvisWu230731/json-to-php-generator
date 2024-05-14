@@ -138,10 +138,9 @@ export default class PhpClassFromJsonMethodPresenter {
 
         if (classArrayType) {
             const lines: string[] = [];
-            lines.push(`${dataItemPre}`)
 
             lines.push(
-                `${property.isNullable() ? `${dataItemNullCheck} ? ` : ''}array_map(static function($data) {`
+                `${dataItemPre}${property.isNullable() ? `${dataItemNullCheck} ? ` : ''}array_map(static function($data) {`
             );
 
             let line ='return ';
@@ -172,6 +171,6 @@ export default class PhpClassFromJsonMethodPresenter {
             return [classFromJsonCode];
         }
 
-        return [dataItem + (property.isNullable() ? ' ?? null': '')];
+        return [dataItemPre + dataItem + (property.isNullable() ? ' ?? null': '')];
     }
 }
