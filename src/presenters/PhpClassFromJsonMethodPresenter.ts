@@ -64,7 +64,7 @@ export default class PhpClassFromJsonMethodPresenter {
         for (let i = 0; i < this.propertyTypePresenter.length; i++) {
             const presenter = this.propertyTypePresenter[i];
 
-            const lines = this.getPropertyFromData(presenter);
+            const lines = this.getPropertyFromData(presenter, true);
 
             if (lines[lines.length - 1] && i !== this.propertyTypePresenter.length - 1) {
                 lines[lines.length - 1] += ',';
@@ -85,7 +85,7 @@ export default class PhpClassFromJsonMethodPresenter {
         codeWriter.writeLine('$instance = new self();');
 
         this.propertyTypePresenter.forEach(type => {
-            const lines = this.getPropertyFromData(type);
+            const lines = this.getPropertyFromData(type, false);
 
             const instancePropInitCode = `$instance->${initCode(type)}`;
 
@@ -123,8 +123,8 @@ export default class PhpClassFromJsonMethodPresenter {
         }
     }
 
-    private getPropertyFromData(typePresenter: PhpPropertyTypePresenter): string[] {
-        const dataItemPre = `${typePresenter.getPhpVarName()}: `
+    private getPropertyFromData(typePresenter: PhpPropertyTypePresenter, withConstructor: boolean): string[] {
+        const dataItemPre = withConstructor ? `` : `${typePresenter.getPhpVarName()}: `
         const dataItem = this.settings.jsonIsArray
             ? `${this.paramVar}['${typePresenter.getProperty().getName()}']`
             : `${this.paramVar}->${typePresenter.getProperty().getName()}`
