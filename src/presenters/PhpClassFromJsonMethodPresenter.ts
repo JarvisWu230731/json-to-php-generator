@@ -124,7 +124,7 @@ export default class PhpClassFromJsonMethodPresenter {
     }
 
     private getPropertyFromData(typePresenter: PhpPropertyTypePresenter, withConstructor: boolean): string[] {
-        const dataItemPre = withConstructor ? `` : `${typePresenter.getPhpVarName()}: `
+        const dataItemPre = !withConstructor ? `` : `${typePresenter.getPhpVarName()}: `
         const dataItem = this.settings.jsonIsArray
             ? `${this.paramVar}['${typePresenter.getProperty().getName()}']`
             : `${this.paramVar}->${typePresenter.getProperty().getName()}`
